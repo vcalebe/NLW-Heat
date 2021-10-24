@@ -66,35 +66,6 @@
                 </ul>
             </div>
         </main>
-        <script>
-
-            const linksSocialMedia = {
-                github: "vcalebe",
-                youtube: "UC6zjbp6xinqgdxFUdH17xGQ",
-                facebook: "maykbrito",
-                instagram: "vcalebe_",
-                twitter: "vcalebe_"
-            }
-
-            function changeSocialMediaLinks(){
-                
-                for (let li of socialLinks.children) {
-                    const social = li.getAttribute('class')
-                    li.children[0].href = `http://${social}.com/${linksSocialMedia[social]}`
-                    
-                    alert(li.children[0].href)
-                }
-                
-                //Duas formas de alterar um elemento
-
-                //document.getElementById('userName').textContent = 'Victor' //1
-                //userName.textContent = "Victor" //2
-            }
-
-            changeSocialMediaLinks()
-
-        
-
-        </script>
+        <script src="main.js"></script>
     </body>
 </html>
