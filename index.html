@@ -1,55 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=dev ice-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=dev ice-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-</head>
-<body>
-    <main>
-        <div class="container">
-            <div class="avatar">
-                <span>
-                    <img src="images/selo.svg" alt="selo">
-                </span>
-                <img src="https://lorempixel.com/185/185/people/" alt="foto">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="avatar">
+                    <span>
+                        <img src="images/selo.svg" alt="selo">
+                    </span>
+                    <img src="https://lorempixel.com/185/185/people/" alt="foto">
+                </div>
+                <h1 id="userName">Victor Calebe</h1>
+                <a 
+                href="https://github.com/vcalebe"
+                target="blanck"
+                >
+                    <img src="images/github.svg" alt="icone github">
+                    vcalebe</a>
+
+                <p>An instructor focused on helping pople start programming for web</p>
+
+                <ul id="socialLinks">
+                    <li class="youtube">
+                        <a 
+                            href="https://youtube.com/mkbryto" 
+                            target="_blank"
+                        >
+                        <img src="images/youtube.svg" alt="icone youtube">
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a 
+                            href="https://instagram.com/mkbryto"
+                            target="_blank"
+                        >
+                            <img src="images/instagram.svg" alt="icone instagram">
+                            </a>
+                    </li>
+                    <li class="facebook">
+                        <a 
+                            href="https://facebook.com/mkbryto"
+                            target="_blank"
+                        >
+                            <img src="images/facebook.svg" alt="icone facebook">
+                            </a>
+                    </li>
+                    <li class="twitter">
+                        <a
+                            href="https://twitter.com/mkbryto"
+                            target="_blank"
+                        >
+                            <img src="images/twitter.svg" alt="icone twitter">
+                            </a>
+                    </li>
+                </ul>
             </div>
-            <h1>Victor Calebe</h1>
-            <a href="https://instagram.com/vcalebe_">
-                <img src="images/github.svg" alt="icone github">
-                vcalebe_</a>
+        </main>
+        <script>
 
-            <p>An instructor focused on helping pople start programming for web</p>
+            const linksSocialMedia = {
+                github: "vcalebe",
+                youtube: "UC6zjbp6xinqgdxFUdH17xGQ",
+                facebook: "maykbrito",
+                instagram: "vcalebe_",
+                twitter: "vcalebe_"
+            }
 
-            <ul>
-                <li>
-                    <a href="https://youtube.com/vcalebe_">
-                    <img src="images/youtube.svg" alt="icone youtube" target="_blank">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/vcalebe_">
-                        <img src="images/instagram.svg" alt="icone instagram" target="_blank">
-                        </a>
-                </li>
-                <li>
-                    <a href="https://facebook.com/vcalebe_">
-                        <img src="images/facebook.svg" alt="icone facebook" target="_blank">
-                        </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/vcalebe_">
-                        <img src="images/twitter.svg" alt="icone twitter" target="_blank">
-                        </a>
-                </li>
-            </ul>
-        </div>
-    </main>
-</body>
+            function changeSocialMediaLinks(){
+                
+                for (let li of socialLinks.children) {
+                    const social = li.getAttribute('class')
+                    li.children[0].href = `http://${social}.com/${linksSocialMedia[social]}`
+                    
+                    alert(li.children[0].href)
+                }
+                
+                //Duas formas de alterar um elemento
+
+                //document.getElementById('userName').textContent = 'Victor' //1
+                //userName.textContent = "Victor" //2
+            }
+
+            changeSocialMediaLinks()
+
+        
+
+        </script>
+    </body>
 </html>
