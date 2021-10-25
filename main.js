@@ -32,10 +32,17 @@ function getGitHubProfileInfos(){
 
     //Quando ha apenas uma linha na funcao, nao e necessario chaves
 
-    fetch(url).then(response => response.json())
-    .then(data => {
-        alert(data.bio)
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            userName.textContent = data.name
+            userBio.textContent = data.bio
+            userLink.href = data.html_url
+            userLogin.textContent = data.login
+            userImage.src = data.avatar_url
     })
+
+    
 }
 
 changeSocialMediaLinks()
